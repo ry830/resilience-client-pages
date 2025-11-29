@@ -37,8 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeCognitiveDistortionModalButton = document.getElementById('closeCognitiveDistortionModalButton');
     const closeCognitiveDistortionModalButton2 = document.getElementById('closeCognitiveDistortionModalButton2')
 
-    const SERVER_URL_REFRAMING = 'http://localhost:3001/api/reframing'; 
-    const SERVER_URL_SUMMARY = 'http://localhost:3001/api/finish'; 
+    const SERVER_BASE_URL = 'https://resilience-mentor-api.onrender.com'; 
+    // --------------------------------------------------------------------------------
+
+    const SERVER_URL_REFRAMING = `${SERVER_BASE_URL}/api/reframing`;
+    const SERVER_URL_SUMMARY = `${SERVER_BASE_URL}/api/finish`;
 
     let currentRecord = {}; 
     
