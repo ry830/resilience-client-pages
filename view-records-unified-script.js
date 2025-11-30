@@ -72,10 +72,10 @@ function displayRecords() {
 
     // フィルタリング表示のメッセージを更新
     if (isFiltered) {
-        document.querySelector('.unified-view-container h1').textContent = `📅 記録の振り返り (${displayDateString})`;
+        document.querySelector('.unified-view-container h1').textContent = ` 記録の振り返り (${displayDateString})`;
         document.querySelector('.unified-view-container p').textContent = 'カレンダーから選択された日付の記録を表示しています。';
     } else {
-        document.querySelector('.unified-view-container h1').textContent = `📈 記録の振り返り (全期間)`;
+        document.querySelector('.unified-view-container h1').textContent = ` 記録の振り返り (全期間)`;
         document.querySelector('.unified-view-container p').textContent = 'これまでの心の筋トレの記録を振り返りましょう。';
     }
     

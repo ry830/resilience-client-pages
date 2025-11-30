@@ -157,11 +157,32 @@
         </header>
 
         <div class="top-nav-controls" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <button id="howToUseButton" class="button-primary" style="background-color: #3498db; border-color: #3498db; font-size: 0.9rem;">
+        使い方
+    </button>
     <button id="logoutButton" class="button-primary" style="background-color: #e74c3c; border-color: #e74c3c; font-size: 0.9rem;">
         ログアウト
     </button>
 
-    
+</div>
+
+<div id="howToUseModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>使い方 </h3>
+        <p>このアプリでは、主に思考変換トレーニングを使って、日常生活でネガティブな場面に遭遇した際に思考をポジティブに変えていくためのトレーニングを行います。</p>
+        
+        <h4> 思考変換トレーニング</h4>
+        <p>この機能を用いてトレーニングを行います。このトレーニングを繰り返すことで、ネガティブな考え方のクセが矯正され、心の回復力（レジリエンス）が高まっていく仕組みです。</p>
+        
+        <h4> 記録の振り返り</h4>
+        <p>過去に行ったトレーニング記録を一覧で確認し、記録を振り返ることができます。</p>
+
+        <h4> 成長可視化ダッシュボード</h4>
+        <p>記録に応じて、「幸福招き猫」のスコアが上がっていきます。スコアが上がるのは1日1回までです。カレンダー上で記録をした日が閲覧できます。日々の成長を視覚的に確認できます。</p>
+
+
+    </div>
 </div>
 
 <div id="mypageMenu" style="position: absolute; top: 110px; right: 20px; width: 250px; background: white; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 20; display: none; text-align: left;">
@@ -214,17 +235,16 @@
 </section>
 
             <nav class="menu">
-                
-                <a href="mind-recorder.html" class="menu-item green">
-                    <span class="icon"></span>
-                    思考変換トレーニング
-                </a>
-                
-                <a href="view-records-unified.html" class="menu-item red">
-    <span class="icon"></span>
-    記録の振り返り 
-</a>
-            </nav>
+    <a href="mind-recorder.html" class="menu-item blue" style="padding: 30px; font-size: 1.6rem; font-weight: 700;">
+        <span class="icon">🧠</span>
+        思考変換トレーニング
+    </a>
+
+    <a href="view-records-unified.html" class="menu-item dark grey" style="padding: 30px; font-size: 1.6rem; font-weight: 700;">
+        <span class="icon">📜</span>
+        記録の振り返り
+    </a>
+</nav>
         </main>
     </div>
 
@@ -452,6 +472,36 @@
 
             // 記録カレンダーの描画
             generateRecordCalendar(allUserRecords); 
+
+// ログアウト機能のロジックの直後（またはDOMContentLoaded内のどこでもOK）に追記
+
+// ------------------------------------
+// 使い方モーダル機能
+// ------------------------------------
+const howToUseButton = document.getElementById('howToUseButton');
+const howToUseModal = document.getElementById('howToUseModal');
+const closeButton = howToUseModal.querySelector('.close-button');
+
+if (howToUseButton && howToUseModal) {
+    // ボタンをクリックしたらモーダルを表示
+    howToUseButton.addEventListener('click', () => {
+        howToUseModal.style.display = 'block';
+    });
+    
+    // 閉じるボタン（×）をクリックしたらモーダルを非表示
+    closeButton.addEventListener('click', () => {
+        howToUseModal.style.display = 'none';
+    });
+    
+    // モーダルの外側をクリックしたらモーダルを非表示
+    window.addEventListener('click', (event) => {
+        if (event.target == howToUseModal) {
+            howToUseModal.style.display = 'none';
+        }
+    });
+}
+
+
         }
 
         // ------------------------------------

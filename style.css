@@ -116,8 +116,9 @@ label {
     margin-bottom: 12px; 
     font-size: 1.6rem; /* ★修正: ラベル（質問文）のフォントサイズを最大化 */
 }
+
 .label-group label {
-    margin-bottom: 0;
+    margin-bottom: 0; 
 }
 
 /* --- HINT BUTTONS (Custom Class) --- */
@@ -315,7 +316,7 @@ label {
 .lucky-cat-stage.stage-4 {
     width: 208px;
     height: 310px; /* 縦長にする */
-    background-image: url('cat_stage4.ng');
+    background-image: url('cat_stage4.png');
     border-color: #ffeb3b;
     box-shadow: 0 0 15px #ffeb3b;
 }
@@ -416,4 +417,39 @@ label {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* style.css の末尾に追記 */
+
+/* 思考変換トレーニングの強調スタイル */
+.menu-item.green { 
+    background-color: #4caf50; 
+    /* デフォルトのフォントサイズを少し上げる */
+    font-size: 1.3rem; 
+    /* デフォルトのパディングを少し増やす */
+    padding: 25px;
+}
+
+/* 記録の振り返りの抑制スタイル */
+.menu-item.red { 
+    background-color: #f44336; 
+    /* デフォルトのフォントサイズを維持または少し下げる */
+    font-size: 1.0rem; 
+    /* デフォルトのパディングを維持または少し減らす */
+    padding: 18px;
+}
+
+/* アイコンを絵文字で表示するために、HTMLのicon spanにマージンを設定 */
+.menu-item .icon {
+    font-size: 2.2rem; /* アイコンのサイズを少し大きく */
+    margin-right: 15px;
+}
+
+/* 媒体クエリ: 画面幅が狭い場合は、ボタンを元のサイズに戻して縦に並べる */
+@media (max-width: 600px) {
+    .menu-item.green,
+    .menu-item.red {
+        padding: 20px !important;
+        font-size: 1.2rem !important;
+    }
 }

@@ -65,7 +65,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px; /* ★修正: 間隔を広げる */
+            margin-bottom: 0px; /* ★修正: 間隔を広げる */
         }
         .label-group label {
             font-weight: 500; /* 太字 */
@@ -99,10 +99,10 @@
 <body>
     <div class="container">
         <header>
-            <h1>🔄 思考変換トレーニング</h1>
+            <h1>思考変換トレーニング</h1>
             <p>ネガティブな出来事をポジティブに考え、心のレジリエンスを高めます💪</p>     
         <button id="showInstructionButton" class="button" style="background-color: #f39c12; border-color: #f39c12; font-size: 0.9rem; margin-bottom: 20px;">
-        💡 トレーニングの目的と使い方
+        トレーニングの目的と使い方
     </button>
         </header>
 
@@ -110,7 +110,7 @@
             
             <div id="step-1" class="step-container">
                 <h3>ステップ1：出来事の記録 </h3>
-                <p>今日、心が揺らいだ出来事を、感情抜きで事実だけを淡々と記録してみましょう。（例: プレゼンで失敗し、上司に厳しく注意された。）</p>
+                <p>最近あった嫌な出来事や、運の悪かった出来事、不安な出来事などの<span style="color: red;">ネガティブな出来事</span>を、感情抜きで事実だけを淡々と記録してみましょう。（例: プレゼンで失敗し、上司に厳しく注意された。）</p>
                 <fieldset>
                     <textarea id="factTextarea" rows="3" placeholder="出来事を客観的に記録"></textarea>
                 </fieldset>
@@ -119,19 +119,19 @@
             
             <div id="step-2" style="display: none;" class="step-container">
                 <h3>ステップ2：思考のクセ分析</h3>
-                <p>その出来事に対し、どんな感情が湧き、その根源にある「思考のクセ」を分析してみましょう。</p>
+                <p>その出来事に対し、どんな感情が湧きましたか？その根源にある「思考のクセ」を考えてみましょう。</p>
                 
                 <fieldset>
-                    <label for="emotionTextarea">1. 湧き出た感情（例: 悔しい、情けない）</label>
-                    <textarea id="emotionTextarea" rows="2" placeholder="感じた感情を正直に"></textarea>
-                </fieldset>
+    <label for="emotionTextarea">1. 湧き出た感情（例: 悔しい、情けない）</label>
+    <textarea id="emotionTextarea" rows="2" placeholder="感じた感情を正直に"></textarea>
+</fieldset>
                 
                 <fieldset>
-                    <div class="label-group">                         <label for="rootThoughtTextarea">2. 思考のクセ（感情の根源にある考え）</label>
-                                                <button class="hint-button" id="showCognitiveDistortionHint">🤔 思考のクセのヒント</button>
-                    </div>
-
-                    <textarea id="rootThoughtTextarea" rows="3" placeholder="例：1回の失敗で全てが決まる。/自分は期待に応えられない人間だ。"></textarea>
+                    <div class="label">
+                        <label for="rootThoughtTextarea">2. 思考のクセ</label>
+                        <button class="hint-button" id="showCognitiveDistortionHint">💡思考のクセのヒント</button>
+                    </div>
+                    <textarea id="rootThoughtTextarea" rows="3" placeholder="例：1回の失敗で全てが決まる。"></textarea>
                 </fieldset>
 
                 <button class="button-primary" id="nextStep2Button">次のステップへ</button>
@@ -146,7 +146,7 @@
 
             <div id="step-3" style="display: none;" class="step-container">
                 <h3>ステップ3：強みへの変換</h3>
-                <p>この出来事を、未来のあなたにとっての『強み』に変えるとしたら、どんな意味を見出せますか？</p>
+                <p>この出来事を、未来のあなたにとっての『強み』になるようにリフレーミングしていきましょう！</p>
                 
                 <fieldset>
                     <div class="label-group">
@@ -203,14 +203,14 @@
             <h3>🧠 思考変換トレーニングの目的と使い方</h3>
             
             <h4 style="color: #2c3e50; margin-top: 25px;"> 目的</h4>
-            <p>運の悪かった出来事・嫌な出来事に対して、視点を変えて考えることで、心のダメージを軽減しレジリエンス力（立ち直る力）を高めます。</p>
+            <p>日常生活でネガティブな場面に遭遇した際に、思考をポジティブに変えていくためのトレーニングを行います。</p><p>ネガティブの元となる思考のクセを矯正し、ネガティブな出来事が未来のあなたへの強みとなるよう思考プロセスを変換します。これを繰り返してネガティブな考え方のクセを矯正し、最終的に心の回復力（レジリエンス）を高めることを目的としています。</p>
 
             <h4 style="color: #2c3e50; margin-top: 25px;"> 使い方</h4>
             <p>【指示に沿って入力を行ってください、入力文字数に制限はありません。
             ※次のページへいってもこの使い方画面は閲覧できます。】
             <p>STEP1. 出来事の記録 : 起こった出来事を、感情を入れずに客観的な事実のみを淡々と記録してください。</p>
             <p>STEP2. 思考のクセ分析 : 1.感情を自由にありのままに書いてください。2.その感情になってしまう原因=思考のクセを考えてみましょう。難しい場合はヒントを活用しましょう。</p>
-            <p>STEP3. 強みへの変換 : 失敗や困難をネガティブと捉えるのではなく、思考を変えて「スキル」「人間関係」「教訓」という3つの強みに変換してしましょう。難しい場合はAIのヒントを活用しましょう。</p>
+            <p>STEP3. 強みへの変換 : 失敗や困難をネガティブと捉えるのではなく、思考を変えて「スキル」「人間関係」「教訓」という3つの強みに変換しましょう。難しい場合はAIのヒントを活用しましょう。</p>
             <p>全て入力し終わったら、最終確認へ進みましょう。最後にAIからフィードバックをもらえます！</p>
 
             <p style="text-align: right; font-style: italic; color: #888; margin-top: 20px;">あなたの成長を応援しています！</p>
